@@ -82,7 +82,7 @@ export default function Projects() {
       <div className="grid md:grid-cols-3 gap-6">
         {projects.map((project, i) => (
           <FadeUp key={project.title} delay={i * 0.09}>
-            <article className="group flex flex-col h-full border border-[#B7C4BD] dark:border-[#B7C4BD]/20 rounded-sm hover:border-[#2F5D5070] dark:hover:border-[#3D7A6870] transition-colors duration-300 overflow-hidden">
+            <article className="group flex flex-col h-full border border-[#B7C4BD] dark:border-[#B7C4BD]/20 rounded-sm hover:border-[#2F5D50] dark:hover:border-[#3D7A68] hover:-translate-y-1.5 hover:shadow-xl hover:shadow-[#2F5D50]/5 dark:hover:shadow-[#3D7A68]/10 transition-all duration-300 overflow-hidden bg-[#FAF8F4] dark:bg-[#161816]">
               {/* Code/visual preview */}
               <div
                 className="border-b border-[#B7C4BD] dark:border-[#B7C4BD]/20 px-5 py-5 min-h-[88px] flex items-center"

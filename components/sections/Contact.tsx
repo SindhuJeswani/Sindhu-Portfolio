@@ -5,6 +5,7 @@ import FadeUp from '@/components/FadeUp'
 import { siteConfig } from '@/data/content'
 import { Mail, Phone } from 'lucide-react'
 import { GithubIcon } from '@/components/GithubIcon'
+import { LinkedinIcon } from '@/components/LinkedinIcon'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -71,6 +72,14 @@ export default function Contact() {
                 href: `tel:${siteConfig.phone}`,
                 ariaLabel: `Call ${siteConfig.phone}`,
                 external: false,
+              },
+              {
+                icon: <LinkedinIcon size={15} aria-hidden="true" />,
+                label: 'LinkedIn',
+                value: 'linkedin.com/in/sindhu-jeswani',
+                href: siteConfig.linkedin,
+                ariaLabel: 'View LinkedIn profile',
+                external: true,
               },
               {
                 icon: <GithubIcon size={15} aria-hidden="true" />,

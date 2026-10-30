@@ -84,7 +84,10 @@ export default function RootLayout({
                 name: 'SZABIST University',
               },
               url: 'https://sindhujeswani.dev',
-              sameAs: ['https://github.com/sindhujeswani'],
+              sameAs: [
+                'https://github.com/sindhujeswani',
+                'https://www.linkedin.com/in/sindhu-jeswani/',
+              ],
               jobTitle: 'Computer Science Student',
               description: siteConfig.meta.description,
             }),

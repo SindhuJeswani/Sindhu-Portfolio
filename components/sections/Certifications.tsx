@@ -20,7 +20,7 @@ export default function Certifications() {
       <div className="flex flex-wrap gap-4">
         {certifications.map((cert, i) => (
           <FadeUp key={cert.name} delay={i * 0.09}>
-            <div className="flex items-center gap-3 border border-[#B7C4BD] dark:border-[#B7C4BD]/20 rounded-sm px-5 py-4 hover:border-[#2F5D5060] dark:hover:border-[#3D7A6860] transition-colors">
+            <div className="flex items-center gap-3 border border-[#B7C4BD] dark:border-[#B7C4BD]/20 rounded-sm px-5 py-4 hover:-translate-y-1 hover:border-[#2F5D50] dark:hover:border-[#3D7A68] hover:shadow-md hover:shadow-[#2F5D50]/5 dark:hover:shadow-[#3D7A68]/10 transition-all duration-200 bg-[#FAF8F4] dark:bg-[#161816]">
               <Award
                 size={15}
                 style={{ color: '#2F5D50', flexShrink: 0 }}
@@ -47,3 +47,4 @@ export default function Certifications() {
     </section>
   )
 }
+

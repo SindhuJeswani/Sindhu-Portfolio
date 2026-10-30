@@ -8,6 +8,7 @@ export const siteConfig = {
   email: 'sindhukumeri44@gmail.com',
   phone: '+92 301 3408943',
   github: 'https://github.com/sindhujeswani',
+  linkedin: 'https://www.linkedin.com/in/sindhu-jeswani/',
   cvPath: '/Sindhu_Jeswani_CV.pdf',
   location: 'Karachi, Pakistan',
   university: 'SZABIST University',
@@ -149,3 +150,4 @@ export const education = {
     'Automata Theory',
   ],
 }
+

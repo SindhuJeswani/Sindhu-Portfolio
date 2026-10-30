@@ -139,7 +139,7 @@ export default function FeaturedProject() {
       </FadeUp>
 
       {/* Case study card */}
-      <div className="border border-[#B7C4BD] dark:border-[#B7C4BD]/20 rounded-sm overflow-hidden">
+      <div className="border border-[#B7C4BD] dark:border-[#B7C4BD]/20 rounded-sm overflow-hidden hover:shadow-2xl hover:shadow-[#2F5D50]/5 dark:hover:shadow-[#3D7A68]/10 transition-shadow duration-500">
         {/* Architecture visual */}
         <div
           className="border-b border-[#B7C4BD] dark:border-[#B7C4BD]/20 px-6 py-10"
@@ -254,3 +254,4 @@ export default function FeaturedProject() {
     </section>
   )
 }
+
