@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sindhujeswani.dev/sitemap.xml

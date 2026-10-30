@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+/* ── Design tokens as CSS custom properties ───────────────── */
+:root {
+  --color-ink: #2B2B2B;
+  --color-bg-light: #FAF8F4;
+  --color-bg-dark: #161816;
+  --color-text-dark: #ECEAE4;
+  --color-accent: #2F5D50;
+  --color-accent-dark: #3D7A68;
+  --color-muted: #5F5F5F;
+  --color-hairline: #B7C4BD;
+
+  --font-serif: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+}
+
+/* ── Base ─────────────────────────────────────────────────── */
+@layer base {
+  :root {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg-light);
+    color: var(--color-ink);
+  }
+
+  html.dark {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-dark);
+  }
+
+  ::selection {
+    background-color: #2F5D50;
+    color: #FAF8F4;
+  }
+
+  :focus-visible {
+    outline: 2px solid #2F5D50;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+/* ── Utilities ────────────────────────────────────────────── */
+@layer utilities {
+  .font-serif { font-family: var(--font-serif); }
+  .font-sans  { font-family: var(--font-sans); }
+
+  /* animated underline on links */
+  .animated-underline {
+    position: relative;
+    display: inline-block;
+  }
+  .animated-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #2F5D50;
+    transition: width 0.3s ease;
+  }
+  html.dark .animated-underline::after {
+    background-color: #3D7A68;
+  }
+  .animated-underline:hover::after,
+  .group:hover .group-animated-underline::after {
+    width: 100%;
+  }
+
+  /* section heading */
+  .section-heading {
+    font-family: var(--font-serif);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: #2B2B2B;
+  }
+  html.dark .section-heading { color: #ECEAE4; }
+
+  /* hairline divider */
+  .hairline {
+    border-top: 1px solid #B7C4BD;
+  }
+  html.dark .hairline {
+    border-top-color: rgba(183,196,189,0.2);
+  }
+
+  /* stack tag */
+  .tag {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+    background: rgba(47,93,80,0.1);
+    color: #2F5D50;
+    border: 1px solid rgba(47,93,80,0.2);
+  }
+  html.dark .tag {
+    background: rgba(61,122,104,0.18);
+    color: #3D7A68;
+    border-color: rgba(61,122,104,0.28);
+  }
+
+  /* buttons */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    background: #2F5D50;
+    color: #FAF8F4;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 2px;
+    transition: opacity 0.2s;
+  }
+  .btn-primary:hover { opacity: 0.88; }
+  html.dark .btn-primary {
+    background: #3D7A68;
+    color: #161816;
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    border: 1px solid rgba(43,43,43,0.3);
+    color: #2B2B2B;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 2px;
+    transition: border-color 0.2s;
+  }
+  .btn-outline:hover { border-color: #2B2B2B; }
+  html.dark .btn-outline {
+    border-color: rgba(236,234,228,0.3);
+    color: #ECEAE4;
+  }
+  html.dark .btn-outline:hover { border-color: #ECEAE4; }
+}
