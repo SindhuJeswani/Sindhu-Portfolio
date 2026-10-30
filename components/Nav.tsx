@@ -59,7 +59,7 @@ export default function Nav() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-xs uppercase tracking-wider font-medium text-[#5F5F5F] dark:text-[#ECEAE4]/70 hover:text-[#2F5D50] dark:hover:text-[#ECEAE4] transition-colors duration-200 animated-underline"
+                className="text-xs uppercase tracking-wider font-semibold text-[#2B2B2B]/85 dark:text-[#ECEAE4]/80 hover:text-[#2F5D50] dark:hover:text-[#3D7A68] transition-colors duration-200 animated-underline"
                 style={{ fontFamily: 'var(--font-sans)' }}
               >
                 {link.label}

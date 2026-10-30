@@ -96,10 +96,10 @@ export default function Hero() {
         {/* Short editorial quote box */}
         <motion.div
           variants={itemVariants}
-          className="p-4 rounded-r-md bg-white/70 dark:bg-white/5 border border-[#B7C4BD]/40 dark:border-[#B7C4BD]/20 border-l-4 border-l-[#2F5D50] dark:border-l-[#3D7A68] shadow-sm max-w-lg"
+          className="p-4 sm:p-5 rounded-r-md bg-white dark:bg-white/5 border border-[#B7C4BD]/60 dark:border-[#B7C4BD]/20 border-l-4 border-l-[#2F5D50] dark:border-l-[#3D7A68] shadow-sm max-w-lg"
         >
           <p
-            className="text-sm text-[#5F5F5F] dark:text-[#ECEAE4]/75 leading-[1.8]"
+            className="text-sm md:text-[0.92rem] text-[#2B2B2B]/90 dark:text-[#ECEAE4]/85 leading-[1.8] font-normal"
             style={{ fontFamily: 'var(--font-sans)' }}
           >
             Final-year CS student at SZABIST, Karachi. Building reliable backend systems, PostgreSQL schemas, and data tools — currently developing an AI-powered bilingual marketplace for my final year project.

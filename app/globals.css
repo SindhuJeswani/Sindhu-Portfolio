@@ -2,6 +2,7 @@
 @source "../components";
 @source "../data";
 @source "../app";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --color-ink: #2B2B2B;
@@ -21,6 +22,11 @@
 @layer base {
   :root {
     scroll-behavior: smooth;
+    color-scheme: light;
+  }
+
+  :root.dark {
+    color-scheme: dark;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -34,13 +40,23 @@
 
   html {
     font-family: var(--font-sans);
-    background-color: var(--color-bg-light);
-    color: var(--color-ink);
+    background-color: #FAF8F4;
+    color: #2B2B2B;
   }
 
   html.dark {
-    background-color: var(--color-bg-dark);
-    color: var(--color-text-dark);
+    background-color: #161816;
+    color: #ECEAE4;
+  }
+
+  body {
+    background-color: #FAF8F4;
+    color: #2B2B2B;
+  }
+
+  html.dark body {
+    background-color: #161816;
+    color: #ECEAE4;
   }
 
   ::selection {
@@ -71,9 +87,9 @@
     bottom: -1px;
     left: 0;
     width: 0;
-    height: 1px;
+    height: 1.5px;
     background-color: #2F5D50;
-    transition: width 0.3s ease;
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
   html.dark .animated-underline::after {
     background-color: #3D7A68;
@@ -86,9 +102,9 @@
   /* section heading */
   .section-heading {
     font-family: var(--font-serif);
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
-    font-weight: 600;
-    letter-spacing: -0.02em;
+    font-size: clamp(2rem, 4.5vw, 2.75rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
     line-height: 1.15;
     color: #2B2B2B;
   }
@@ -97,6 +113,7 @@
   /* hairline divider */
   .hairline {
     border-top: 1px solid #B7C4BD;
+    opacity: 0.7;
   }
   html.dark .hairline {
     border-top-color: rgba(183,196,189,0.2);
@@ -106,18 +123,18 @@
   .tag {
     display: inline-block;
     font-family: var(--font-sans);
-    font-size: 0.7rem;
-    font-weight: 500;
-    padding: 0.2rem 0.6rem;
-    border-radius: 2px;
-    background: rgba(47,93,80,0.1);
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.2rem 0.65rem;
+    border-radius: 3px;
+    background: rgba(47,93,80,0.08);
     color: #2F5D50;
     border: 1px solid rgba(47,93,80,0.2);
   }
   html.dark .tag {
     background: rgba(61,122,104,0.18);
-    color: #3D7A68;
-    border-color: rgba(61,122,104,0.28);
+    color: #ECEAE4;
+    border-color: rgba(61,122,104,0.3);
   }
 
   /* buttons */
@@ -125,49 +142,51 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.625rem 1.25rem;
+    padding: 0.65rem 1.35rem;
     background: #2F5D50;
-    color: #FAF8F4;
+    color: #FAF8F4 !important;
     font-family: var(--font-sans);
     font-size: 0.875rem;
-    font-weight: 500;
-    border-radius: 2px;
+    font-weight: 600;
+    border-radius: 3px;
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .btn-primary:hover {
     opacity: 0.92;
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(47,93,80,0.25);
+    box-shadow: 0 4px 14px rgba(47,93,80,0.3);
   }
   html.dark .btn-primary {
     background: #3D7A68;
-    color: #161816;
+    color: #161816 !important;
   }
   html.dark .btn-primary:hover {
-    box-shadow: 0 4px 12px rgba(61,122,104,0.3);
+    box-shadow: 0 4px 14px rgba(61,122,104,0.35);
   }
 
   .btn-outline {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.625rem 1.25rem;
-    border: 1px solid rgba(43,43,43,0.3);
-    color: #2B2B2B;
+    padding: 0.65rem 1.35rem;
+    border: 1px solid rgba(43,43,43,0.35);
+    background: #FFFFFF;
+    color: #2B2B2B !important;
     font-family: var(--font-sans);
     font-size: 0.875rem;
-    font-weight: 500;
-    border-radius: 2px;
+    font-weight: 600;
+    border-radius: 3px;
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .btn-outline:hover {
     border-color: #2B2B2B;
     transform: translateY(-1px);
-    background: rgba(43,43,43,0.03);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   }
   html.dark .btn-outline {
     border-color: rgba(236,234,228,0.3);
-    color: #ECEAE4;
+    background: transparent;
+    color: #ECEAE4 !important;
   }
   html.dark .btn-outline:hover {
     border-color: #ECEAE4;
