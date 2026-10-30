@@ -120,6 +120,12 @@ export const skills = [
 ]
 
 export const certifications = [
+  {
+    name: 'Get Started with Python',
+    issuer: 'Google (Coursera)',
+    date: 'Dec 2025',
+    url: 'https://coursera.org/verify/TT3A21EHJ4ZS',
+  },
   { name: 'Zab-e-Fest Hackathon', issuer: 'SZABIST University' },
   { name: 'Software Quality & Debugging', issuer: 'Professional Development' },
   { name: 'Bounty DLD', issuer: 'Bounty' },
